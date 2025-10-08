@@ -1,0 +1,1 @@
+docker exec -it ubuntu2204docker /bin/bash

@@ -1,0 +1,11 @@
+# packages.repos
+repositories:
+  rslidar_sdk:
+    type: git
+    url: https://github.com/mitsuichi31/rslidar_sdk_4arro.git
+    version: main  # または使用したいブランチ名 (例: ros2, humble, main など)
+  
+  rslidar_msg:
+    type: git
+    url: https://github.com/mitsuichi31/rslidar_msg_4arro.git
+    version: master  # または使用したいブランチ名
