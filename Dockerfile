@@ -24,10 +24,11 @@ RUN apt-get install -y software-properties-common
 RUN add-apt-repository universe
 
 # Add user account
-ENV USER_NAME=mitz
+ENV USER_NAME=user
+ENV USER_PASS=user123
 
 RUN useradd -m -d /home/${USER_NAME} ${USER_NAME} \
-        -p $(perl -e 'print crypt("${USER_NAME}", "hira95"),"\n"') && \
+        -p $(perl -e 'print crypt("${USER_NAME}", "${USER_PASS}}"),"\n"') && \
     echo "${USER_NAME} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 RUN locale-gen en_US.UTF-8
 USER ${USER_NAME}
@@ -118,7 +119,7 @@ RUN chown ${USER_NAME}:${USER_NAME} /home/${USER_NAME}/entrypoint.sh
 # ----------------------------------------------------
 # ENTRYPOINT と CMD の設定
 # ENTRYPOINT で実行ファイルを固定
-ENTRYPOINT ["/home/mitz/entrypoint.sh"]
+ENTRYPOINT ["/home/user/entrypoint.sh"]
 
 # CMD でデフォルト実行コマンドを設定（entrypoint.sh内の exec "$@" で実行される）
 CMD ["ros2", "launch", "rslidar_sdk", "start_node.py"]

@@ -1,4 +1,4 @@
-USER_NAME=mitz
+USER_NAME=user
 WORKSPACE=devel
 
 xhost local:
@@ -9,5 +9,5 @@ docker run --rm -it --privileged \
         -v /home/$USER_NAME/docker:/$USER_NAME/docker \
         -e DISPLAY=$DISPLAY \
         --network host \
-        --name ubuntu2204docker \
+        --name ubuntu2204docker-rslidar \
         ubuntu2204docker:rslidar_sdk

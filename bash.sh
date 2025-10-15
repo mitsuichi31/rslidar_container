@@ -1,1 +1,1 @@
-docker exec -it ubuntu2204docker /bin/bash
+docker exec -it ubuntu2204docker-rslidar /bin/bash
